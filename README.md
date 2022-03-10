@@ -21,6 +21,7 @@
       <td>Valerie</td>
     </tr>
   </tbody>
+</table
 <h2> Time Box </h2>
 <table>
   <thead>
