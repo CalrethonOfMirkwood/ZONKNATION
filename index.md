@@ -1,37 +1,52 @@
-## Welcome to GitHub Pages
+<h1>GSA (Gender and Sexuality Alliance) Website</h1>
+<h2>Project Description</h2>
+<p>Our plan is to create a website for the GSA which can be used to tell stories of members, advocate for tolerance, and provide updates on the club.</p>
+<h2>Ideas and wireframes</h2>
 
-You can use the [editor on GitHub](https://github.com/CalrethonOfMirkwood/ZONKNATION/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<h2>People</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Github @</th>
+      <th>Role</th>
+      <th>Issues</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Reinhardt</td>
+      <td><a href="https://github.com/Reinhardtlotter">Reinhardtlotter</a></td>
+      <td>Scrum Master</td>
+      <td><a href="https://github.com/CalrethonOfMirkwood/ZONKNATION/issues?q=assignee%3AReinhardtlotter+is%3Aopen">Issues</a></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>Sophie</td>
+      <td><a href="https://github.com/CalrethonOfMirkwood">CalrethonOfMirkwood</a></td>
+      <td>Deployment Manager</td>
+      <td><a href="https://github.com/CalrethonOfMirkwood/ZONKNATION/issues?q=is%3Aopen+assignee%3ACalrethonOfMirkwood">Issues</a></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>Soren</td>
+      <td><a href="https://github.com/wangzi190">wangzi190</a></td>
+      <td>TO</td>
+      <td><a href="https://github.com/CalrethonOfMirkwood/ZONKNATION/issues?q=is%3Aopen+assignee%3Awangzi190">Issues</a></td>
+    </tr>
+  </tbody>
+    <tbody>
+    <tr>
+      <td>Valerie</td>
+      <td><a href="https://github.com/DistilledVinegar">DistilledVinegar</a></td>
+      <td>Design Manager and Github Admin</td>
+      <td><a href="https://github.com/CalrethonOfMirkwood/ZONKNATION/issues?q=is%3Aopen+assignee%3ADistilledVinegar">Issues</a></td>
+    </tr>
+  </tbody>
+</table>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CalrethonOfMirkwood/ZONKNATION/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+<h2>Time Box</h2>
+<h3>Week 0+1</h3>
+We formed groups and chose the website theme and sponsor.  As explained above, we will make a website for the GSA, Soren is on the board.
