@@ -1,3 +1,4 @@
+{% include navigation.html %}
 <h1>Time Box</h1>
 <table>
   <tr>
