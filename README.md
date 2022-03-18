@@ -45,7 +45,7 @@
       <td><a href="https://github.com/wangzi190">wangzi190</a></td>
       <td>TO</td>
       <td><a href="https://github.com/CalrethonOfMirkwood/ZONKNATION/issues?q=is%3Aopen+assignee%3Awangzi190">Issues</a></td>
-      <td></td>
+      <td>graylzhuang@gmail.com</td>
     </tr>
   </tbody>
     <tbody>
