@@ -1,8 +1,15 @@
 {% include navigation.html %}
+
 <h1>GSA (Gender and Sexuality Alliance) Website</h1>
 <h2>Project Description</h2>
 <p>Our plan is to create a website for the GSA which can be used to tell stories of members, advocate for tolerance, and provide updates on the club.</p>
 <h2>Ideas and wireframes</h2>
+
+![image](https://user-images.githubusercontent.com/89236857/159085012-f907f27c-5c5a-4e9c-9a4c-5680f9d91724.png)
+
+![image](https://user-images.githubusercontent.com/89236857/159084964-d7cd5701-b8d7-4698-90b5-e851b17b0d8b.png)
+
+![image](https://user-images.githubusercontent.com/89236857/159084923-4e310e31-37df-49fa-ba45-f03ab87496e7.png)
 
 <h2>People</h2>
 <table>
@@ -39,6 +46,7 @@
       <td><a href="https://github.com/wangzi190">wangzi190</a></td>
       <td>TO</td>
       <td><a href="https://github.com/CalrethonOfMirkwood/ZONKNATION/issues?q=is%3Aopen+assignee%3Awangzi190">Issues</a></td>
+      <td>graylzhuang@gmail.com</td>
     </tr>
   </tbody>
     <tbody>

@@ -1,4 +1,5 @@
 {% include navigation.html %}
+
 <body>
 
     <p>GSAsite is an online forum designed to connect members of the LGBTQ community with one another to form friendships and support groups, while providing allies an opportunity to educate themselves on the concerns and challenges facing gender, sexual, and romantic minorities in a safe, online space.</p>
