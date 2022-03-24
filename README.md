@@ -4,6 +4,10 @@
 <p>Our plan is to create a website for the GSA which can be used to tell stories of members, advocate for tolerance, and provide updates on the club.</p>
 <h2>Ideas and wireframes</h2>
 
+![image](https://user-images.githubusercontent.com/89236857/160013877-f009e966-2e4b-43dd-a4a8-e05a986bdb2c.png)
+
+![image](https://user-images.githubusercontent.com/89236857/160014610-8ecfc1df-f85a-4c15-81e9-479730822eb8.png)
+
 ![image](https://user-images.githubusercontent.com/89236857/159085012-f907f27c-5c5a-4e9c-9a4c-5680f9d91724.png)
 
 ![image](https://user-images.githubusercontent.com/89236857/159084964-d7cd5701-b8d7-4698-90b5-e851b17b0d8b.png)
