@@ -1,4 +1,3 @@
-{% include navigation.html %}
 <h1>Time Box</h1>
 <table>
   <tr>
@@ -14,4 +13,5 @@
     <td><a href="https://github.com/CalrethonOfMirkwood/ZONKNATION/issues/9">Sophie Issues</a></td>
     <td><a href="https://github.com/CalrethonOfMirkwood/ZONKNATION/issues/9">Valerie Issues</a></td>
     <td><a href="https://github.com/CalrethonOfMirkwood/ZONKNATION/issues/9">Soren Issues</a></td>
-    
+  </tr>
+</table>
