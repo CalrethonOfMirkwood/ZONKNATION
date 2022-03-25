@@ -1,3 +1,4 @@
+{% include navigation.html %}
 <h1> Wire Frames and Ideas</h1>
 
 ![image](https://user-images.githubusercontent.com/89236857/160169290-48e7bf23-61ba-4c83-9c57-75fe3dd819de.png)
