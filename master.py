@@ -1,34 +1,39 @@
-from flask import Flask, render_template
+from flask import Blueprint, render_template
+from flask_login import login_required, current_user
+from __init__ import db
 
-app = Flask(__name__)
+master = Blueprint('master', __name__)
 
-@app.route('/')
+@master.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/resources')
+@master.route('/resources')
 def resources():
     return render_template('resources.html')
 
-@app.route('/signup')
+@master.route('/signup')
 def signup():
     return render_template('signup.html')
 
-@app.route('/calender')
+@master.route('/calender')
 def calender():
     return render_template('calender.html')
 
-@app.route('/about')
+@master.route('/about')
 def about():
     return render_template('about.html')
 
+@master.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html', name=current_user.name)
+
 # error handling
-@app.errorhandler(500)
+@master.errorhandler(500)
 def server_error(e):
     return render_template('500.html'), 500
 
-@app.errorhandler(404)
+@master.errorhandler(404)
 def server_error(e):
     return render_template('404.html'), 404
-
-app.run()
