@@ -1,8 +1,8 @@
-from flask import Blueprint, render_template
+from flask import Flask, render_template
 from flask_login import login_required, current_user
 from __init__ import db
 
-master = Blueprint('master', __name__)
+master = Flask(__name__)
 
 @master.route('/')
 def index():
