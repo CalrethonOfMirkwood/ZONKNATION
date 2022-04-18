@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user
-from ZONKNATION.model import User
+from model import User
 from __init__ import db
 
 auth = Blueprint('auth', __name__)
@@ -32,6 +32,7 @@ def signup():
 def signup_post():
     email = request.form.get('email')
     name = request.form.get('name')
+    phonenumber = request.form.get('phonenumber')
     password = request.form.get('password')
     user = User.query.filter_by(email=email).first()
 
@@ -39,7 +40,7 @@ def signup_post():
         flash('Email address already exists')
         return redirect(url_for('auth.signup'))
 
-    new_user = User(email=email, name=name, password=generate_password_hash(password, method='sha256'))
+    new_user = User(email=email, name=name, phonenumber=phonenumber,password=generate_password_hash(password, method='sha256'))
     db.session.add(new_user)
     db.session.commit()
 

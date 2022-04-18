@@ -26,7 +26,10 @@ def about():
 @master.route('/profile')
 @login_required
 def profile():
-    return render_template('profile.html', name=current_user.name)
+    return render_template('profile.html',
+                           name=current_user.name,
+                           phonenumber=current_user.phonenumber,
+                           email=current_user.email)
 
 # error handling
 @master.errorhandler(500)
