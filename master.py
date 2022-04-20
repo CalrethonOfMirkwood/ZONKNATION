@@ -29,7 +29,12 @@ def profile():
     return render_template('profile.html',
                            name=current_user.name,
                            phonenumber=current_user.phonenumber,
-                           email=current_user.email)
+                           email=current_user.email,
+                           pronouns=current_user.pronouns,
+                           gender=current_user.gender,
+                           attraction=current_user.attraction,
+                           bio=current_user.bio,
+                           )
 
 # error handling
 @master.errorhandler(500)

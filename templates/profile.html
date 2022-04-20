@@ -4,5 +4,15 @@
 <h1 class="title">
     Welcome, {{ name }}!
 </h1>
-<p>Your email is {{ email }} and your phone number is {{ phonenumber }}.</p>
+<p class="subtitle">{{ pronouns }}</p>
+<p class="subtitle">Your email is {{ email }} and your phone number is {{ phonenumber }}.</p>
+<div class="container">
+    <h3>Pronouns: {{ pronouns }}</h3>
+    <h3>Gender: {{ gender }}</h3>
+    <h3>Sexual+Romantic Attraction: {{ attraction }}</h3>
+    <h3>About:</h3>
+    <p>{{ bio }}</p>
+
+</div>
+<p><a href="{{ url_for('auth.update_post') }}">Update information</a></p>
 {% endblock %}
