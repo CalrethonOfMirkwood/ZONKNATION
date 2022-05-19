@@ -5,9 +5,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        * {box-sizing: border-box}
-        body {font-family: Verdana, sans-serif; margin:0}
-        .mySlides {display: none}
+        * {box-sizing: border-box;}
+        body {font-family: Verdana, sans-serif;}
+        .mySlides {display: none;}
         img {vertical-align: middle;}
 
         /* Slideshow container */
@@ -15,33 +15,6 @@
             max-width: 1000px;
             position: relative;
             margin: auto;
-        }
-
-        /* Next & previous buttons */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
-
-        /* Position the "next button" to the right */
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
         }
 
         /* Caption text */
@@ -66,7 +39,6 @@
 
         /* The dots/bullets/indicators */
         .dot {
-            cursor: pointer;
             height: 15px;
             width: 15px;
             margin: 0 2px;
@@ -76,7 +48,7 @@
             transition: background-color 0.6s ease;
         }
 
-        .active, .dot:hover {
+        .active {
             background-color: #717171;
         }
 
@@ -93,72 +65,59 @@
 
         /* On smaller screens, decrease text size */
         @media only screen and (max-width: 300px) {
-            .prev, .next,.text {font-size: 11px}
+            .text {font-size: 11px}
         }
     </style>
 </head>
-<center><h1>GSA/ GENDER SEXUALITY ALLIANCE</h1></center>
-<body>
+
+<h1>THE GSA / GENDER SEXUALITY ALLIANCE</h1>
 
 <div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <img src="https://files.worldwildlife.org/wwfcmsprod/images/Tiger_resting_Bandhavgarh_National_Park_India/hero_small/6aofsvaglm_Medium_WW226365.jpg" style="width: 70%"/>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg" style="width:70%">
+    </div>
 
     <div class="mySlides fade">
         <img src="https://i.guim.co.uk/img/media/c0e411f5b4c387cd8b275f0794a3618210c5b216/0_339_5081_3048/master/5081.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=2ef9777aa8e5d74ff5048026d93470c3" style="width:70%">
     </div>
 
-    <div class="mySlides fade">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Walking_tiger_female.jpg" style="width:70%">
-    </div>
-
-    <div class="mySlides fade">
-       <img src="https://files.worldwildlife.org/wwfcmsprod/images/Tiger_resting_Bandhavgarh_National_Park_India/hero_small/6aofsvaglm_Medium_WW226365.jpg" style="width:70%"/>
-    </div>
-
-
-<!--    <a class="prev" onclick="plusSlides(-1)">❮</a>-->
-<!--    <a class="next" onclick="plusSlides(1)">❯</a>-->
-
 </div>
 <br>
-
 <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
 </div>
-
 <br>
-<center><h2>Above are some pictures of the cub and its members</h2></center>
+<br>
+<h2>OUR MISSION STATEMENT:</h2>
 
+<h3>GSAsite is an online forum designed to connect members of the LGBTQ community with one another to form friendships and support groups, while providing allies an opportunity to educate themselves on the concerns and challenges facing gender, sexual, and romantic minorities in a safe, online space.</h3>
 <script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
+    let slideIndex = 0;
+    showSlides();
 
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
+    function showSlides() {
         let i;
         let slides = document.getElementsByClassName("mySlides");
         let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";
         }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" active", "");
         }
         slides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 4000); // Change image every 2 seconds
     }
 </script>
-
-</body>
 </html>
 {% endblock %}
