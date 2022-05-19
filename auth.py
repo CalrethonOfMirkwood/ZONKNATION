@@ -46,6 +46,10 @@ def signup_post():
 
     return redirect(url_for('auth.login'))
 
+@auth.route('/update')
+def update():
+    return render_template('update.html')
+
 @auth.route('/update', methods=['POST'])
 def update_post():
     email = request.form.get('email')
@@ -53,13 +57,9 @@ def update_post():
     phonenumber = request.form.get('phonenumber')
     pronouns = request.form.get('pronouns')
     gender = request.form.get('gender')
-    sexuality = request.form.get('sexuality')
     romance = request.form.get('romance')
     bio = request.form.get('bio')
     password = request.form.get('password')
-
-    user = User(email=email, name=name, phonenumber=phonenumber, pronouns=pronouns, gender=gender, sexuality=sexuality, romance=romance, bio=bio, password=generate_password_hash(password, method='sha256'))
-    db.session.add(user)
     db.session.commit()
 
     return redirect(url_for('master.profile'))
