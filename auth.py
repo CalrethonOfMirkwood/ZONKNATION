@@ -53,13 +53,20 @@ def update():
 @auth.route('/update', methods=['POST'])
 def update_post():
     email = request.form.get('email')
-    name = request.form.get('name')
-    phonenumber = request.form.get('phonenumber')
-    pronouns = request.form.get('pronouns')
-    gender = request.form.get('gender')
-    romance = request.form.get('romance')
-    bio = request.form.get('bio')
     password = request.form.get('password')
+    user = User.query.filter_by(email=email).first()
+
+    if not user or not check_password_hash(user.password, password):
+        flash('Credentials incorrect.  Please try again')
+        return redirect(url_for('auth.login'))
+
+    user.name = request.form.get('name')
+    user.phonenumber = request.form.get('phonenumber')
+    user.pronouns = request.form.get('pronouns')
+    user.gender = request.form.get('gender')
+    user.romance = request.form.get('romance')
+    user.bio = request.form.get('bio')
+    user.password = request.form.get('password')
     db.session.commit()
 
     return redirect(url_for('master.profile'))
