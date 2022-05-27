@@ -39,11 +39,10 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>Resource</th>
+                                <th>Link</th>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Phone</th>
+                                <th>Grade</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -53,14 +52,14 @@
                                 Prepare table for display
                                     caution: phone number needs "~" format step to force type to string
                                 -->
-                                {% set pn = "" ~ row['phone'] %}
-                                {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}
+{#                                {% set pn = "" ~ row['phone'] %}#}
+{#                                {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}#}
                                 <tr>
-                                    <td>{{ row['userID'] }}</td>
+                                    <td>{{ row['resource'] }}</td>
+                                    <td>{{ row['link'] }}</td>
                                     <td>{{ row['name'] }}</td>
-                                    <td>{{ row['email'] }}</td>
-                                    <td>{{ row['password'] | truncate(20) }}</td>
-                                    <td>{{ pnf }}</td>
+                                    <td>{{ row['grade'] }}</td>
+{#                                    <td>{{ pnf }}</td>#}
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -88,7 +87,7 @@
                         <tbody>
                         <tr>
                             <td><input type="text" name="resource" id="resource" required></td>
-                            <td><input type="text" name="elink" id="link" required></td>
+                            <td><input type="text" name="link" id="link" required></td>
                             <td><input type="text" name="name" id="name" required></td>
                             <td><input type="number" name="grade" id="grade" required></td>
                             <td><input type="submit" value="Create"></td>

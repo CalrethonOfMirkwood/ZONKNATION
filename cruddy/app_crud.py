@@ -86,7 +86,7 @@ def createresource():
             request.form.get("name"),
             request.form.get("grade")
         )
-        po.create()
+        po.createresource()
     return redirect(url_for('crud.crud'))
 
 
