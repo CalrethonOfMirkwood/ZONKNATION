@@ -12,6 +12,46 @@ from flask_login import UserMixin
 # -- a.) db.Model is like an inner layer of the onion in ORM
 # -- b.) Users represents data we want to store, something that is built on db.Model
 # -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL
+
+
+class Resources(db.Model):
+
+    __tablename__ = 'resources'
+    # define the Users schema
+    resource = db.Column(db.String(255), nullable=False, primary_key=True)
+    link = db.Column(db.String(255), unique=False, nullable=False)
+    name = db.Column(db.String(255), unique=False, nullable=False)
+    grade = db.Column(db.String(255), unique=False, nullable=False)
+
+    # constructor of a User object, initializes of instance variables within object
+    def __init__(self, resource, link, name, grade):
+        self.resource = resource
+        self.link = link
+        self.name = name
+        self.grade = grade
+
+    # CRUD create/add a new record to the table
+    # returns self or None on error
+    def create(self):
+        try:
+            # creates a person object from Users(db.Model) class, passes initializers
+            db.session.add(self)  # add prepares to persist person object to Users table
+            db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
+            return self
+        except IntegrityError:
+            db.session.remove()
+            return None
+
+    # CRUD read converts self to dictionary
+    # returns dictionary
+    def read(self):
+        return {
+            "resource": self.resource,
+            "link": self.link,
+            "name": self.name,
+            "grade": self.grade,
+        }
+
 class Users(UserMixin, db.Model):
     # define the Users schema
     userID = db.Column(db.Integer, primary_key=True)

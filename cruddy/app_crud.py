@@ -76,18 +76,18 @@ def create():
         po.create()
     return redirect(url_for('crud.crud'))
 
-@app_crud.route('/createresource/', methods=["POST"])
-def createresource():
-    """gets data from form and add it to Users table"""
-    if request.form:
-        po = Users(
-            request.form.get("resource"),
-            request.form.get("link"),
-            request.form.get("name"),
-            request.form.get("grade")
-        )
-        po.createresource()
-    return redirect(url_for('crud.crud'))
+# @app_crud.route('/createresource/', methods=["POST"])
+# def createresource():
+#     """gets data from form and add it to Users table"""
+#     if request.form:
+#         po = Users(
+#             request.form.get("resource"),
+#             request.form.get("link"),
+#             request.form.get("name"),
+#             request.form.get("grade")
+#         )
+#         po.createresource()
+#     return redirect(url_for('crud.crud'))
 
 
 # CRUD read
