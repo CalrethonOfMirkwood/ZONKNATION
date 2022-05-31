@@ -6,6 +6,8 @@ app_y2022 = Blueprint('y2022', __name__,
                       static_folder='static', static_url_path='/static/assets')
 
 
+
+
 @app_y2022.route('/github')
 def github():
     return render_template("course/github.html")

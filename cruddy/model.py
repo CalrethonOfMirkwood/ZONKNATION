@@ -1,4 +1,8 @@
 """ database dependencies to support Users db examples """
+import os
+import shutil
+from random import randrange
+
 from __init__ import db
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -14,9 +18,9 @@ from flask_login import UserMixin
 # -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL
 
 
-class Resources(db.Model):
+class MyResources(db.Model):
 
-    __tablename__ = 'resources'
+    __tablename__ = 'myresources'
     # define the Users schema
     resource = db.Column(db.String(255), nullable=False, primary_key=True)
     link = db.Column(db.String(255), unique=False, nullable=False)
@@ -30,9 +34,14 @@ class Resources(db.Model):
         self.name = name
         self.grade = grade
 
+    # Returns a string representation of the MyResources object, similar to java toString()
+    # returns string
+    def __repr__(self):
+        return "MyResources(" + self.resource + "," + self.link + "," + self.name + "," + self.grade +")"
+
     # CRUD create/add a new record to the table
     # returns self or None on error
-    def create(self):
+    def createresource(self):
         try:
             # creates a person object from Users(db.Model) class, passes initializers
             db.session.add(self)  # add prepares to persist person object to Users table
@@ -152,6 +161,14 @@ def model_tester():
         except IntegrityError:
             db.session.remove()
             print(f"Records exist, duplicate email, or error: {row.email}")
+    r1 = MyResources(resource="suicide prevention", link="https://suicidepreventionlifeline.org/", name="example", grade="10")
+    restable = [r1]
+    for row in restable:
+        try:
+            db.session.add(row)
+            db.session.commit()
+        except IntegrityError:
+            db.session.remove()
 
 
 def model_printer():
@@ -159,6 +176,13 @@ def model_printer():
     print("Table: users with SQL query")
     print("------------")
     result = db.session.execute('select * from users')
+    print(result.keys())
+    for row in result:
+        print(row)
+    print("------------")
+    print("Table: resources with SQL query")
+    print("------------")
+    result = db.session.execute('select * from MyResources')
     print(result.keys())
     for row in result:
         print(row)
