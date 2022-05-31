@@ -31,13 +31,11 @@ login_manager.init_app(app)
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-auth = Blueprint('auth', __name__)
-
-@auth.route('/login')
+@app.route('/login')
 def login():
     return render_template('login.html')
 
-@auth.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def login_post():
     email = request.form.get('email')
     password = request.form.get('password')
@@ -51,11 +49,11 @@ def login_post():
     login_user(user, remember=remember)
     return redirect(url_for('master.profile'))
 
-@auth.route('/signup')
+@app.route('/signup')
 def signup():
     return render_template('signup.html')
 
-@auth.route('/signup', methods=['POST'])
+@app.route('/signup', methods=['POST'])
 def signup_post():
     email = request.form.get('email')
     name = request.form.get('name')
@@ -73,11 +71,11 @@ def signup_post():
 
     return redirect(url_for('auth.login'))
 
-@auth.route('/update')
+@app.route('/update')
 def update():
     return render_template('update.html')
 
-@auth.route('/update', methods=['POST'])
+@app.route('/update', methods=['POST'])
 def update_post():
     email = request.form.get('email')
     password = request.form.get('password')
@@ -98,32 +96,27 @@ def update_post():
 
     return redirect(url_for('master.profile'))
 
-app.register_blueprint(auth_blueprint)
-
-
-master = Blueprint('master', __name__)
-
-@master.route('/')
+@app.route('/')
 def index():
     return render_template('index.html')
 
-@master.route('/resources')
+@app.route('/resources')
 def resources():
     return render_template('resources.html')
 
-@master.route('/signup')
+@app.route('/signup')
 def signup():
     return render_template('signup.html')
 
-@master.route('/calender')
+@app.route('/calender')
 def calender():
     return render_template('calender.html')
 
-@master.route('/about')
+@app.route('/about')
 def about():
     return render_template('about.html')
 
-@master.route('/profile')
+@app.route('/profile')
 @login_required
 def profile():
     return render_template('profile.html',
@@ -137,12 +130,10 @@ def profile():
                            )
 
 # error handling
-@master.errorhandler(500)
+@app.errorhandler(500)
 def server_error(e):
     return render_template('500.html'), 500
 
-@master.errorhandler(404)
+@app.errorhandler(404)
 def server_error(e):
     return render_template('404.html'), 404
-
-app.register_blueprint(master_blueprint)
