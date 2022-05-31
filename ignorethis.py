@@ -31,11 +31,9 @@ login_manager.init_app(app)
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-@app.route('/login')
+@app.route('/login', methods=['POST'])
 def login():
     return render_template('login.html')
-
-@app.route('/login', methods=['POST'])
 def login_post():
     email = request.form.get('email')
     password = request.form.get('password')
@@ -49,11 +47,9 @@ def login_post():
     login_user(user, remember=remember)
     return redirect(url_for('app.profile'))
 
-@app.route('/signup')
+@app.route('/signup', methods=['POST'])
 def signup():
     return render_template('signup.html')
-
-@app.route('/signup', methods=['POST'])
 def signup_post():
     email = request.form.get('email')
     name = request.form.get('name')
@@ -71,11 +67,10 @@ def signup_post():
 
     return redirect(url_for('app.login'))
 
-@app.route('/update')
-def update():
-    return render_template('update.html')
 
 @app.route('/update', methods=['POST'])
+def update():
+    return render_template('update.html')
 def update_post():
     email = request.form.get('email')
     password = request.form.get('password')
