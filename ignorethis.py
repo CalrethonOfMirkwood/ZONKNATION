@@ -99,10 +99,6 @@ def index():
 def resources():
     return render_template('resources.html')
 
-@app.route('/signup')
-def signup():
-    return render_template('signup.html')
-
 @app.route('/calender')
 def calender():
     return render_template('calender.html')
