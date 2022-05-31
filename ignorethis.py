@@ -1,6 +1,5 @@
 from flask import Flask, Blueprint, render_template
 from flask_login import UserMixin
-from __init__ import db
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 
