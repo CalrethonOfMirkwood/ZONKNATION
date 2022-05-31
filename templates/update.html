@@ -5,15 +5,19 @@
     <h3 class="title">Update</h3>
     <div class="box">
 
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <div class="notification is-danger">
-            {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
-        </div>
-        {% endif %}
-        {% endwith %}
+        <form method="POST" action="/update">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="email" name="email" placeholder="Your Email" autofocus="">
+                </div>
+            </div>
 
-        <form method="POST" action="/signup">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="password" name="password" placeholder="Your Password">
+                </div>
+            </div>
+
             <div class="field">
                 <div class="control">
                     <input class="input is-large" type="text" name="name" placeholder="Name" autofocus="">
@@ -22,23 +26,29 @@
 
             <div class="field">
                 <div class="control">
-                    <input class="input is-large" type="pronouns" name="pronouns" placeholder="pronouns", autofocus="">
+                    <input class="input is-large" type="pronouns" name="pronouns" placeholder="Pronouns" autofocus="">
                 </div>
             </div>
 
             <div class="field">
                 <div class="control">
-                    <input class="input is-large" type="gender" name="gender" placeholder="gender", autofocus="">
+                    <input class="input is-large" type="gender" name="gender" placeholder="Gender" autofocus="">
                 </div>
             </div>
 
             <div class="field">
                 <div class="control">
-                    <input class="input is-large" type="attraction" name="attraction" placeholder="sexuality", autofocus="">
+                    <input class="input is-large" type="attraction" name="attraction" placeholder="Sexuality" autofocus="">
                 </div>
             </div>
 
-            <button class="button is-block is-info is-large is-fullwidth">Sign Up</button>
+            <div class="field">
+                <div class="control">
+                    <textarea class="textarea" type="bio" name="bio" placeholder="About me"></textarea>
+                </div>
+            </div>
+
+            <button class="button is-block is-info is-large is-fullwidth">Update</button>
         </form>
     </div>
 </div>
