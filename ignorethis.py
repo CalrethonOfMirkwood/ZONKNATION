@@ -24,7 +24,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 db.init_app(app)
 
 login_manager = LoginManager()
-login_manager.login_view = 'auth.login'
+login_manager.login_view = 'app.login'
 login_manager.init_app(app)
 
 @login_manager.user_loader
@@ -44,10 +44,10 @@ def login_post():
 
     if not user or not check_password_hash(user.password, password):
         flash('Please check your login details and try again.')
-        return redirect(url_for('auth.login'))
+        return redirect(url_for('app.login'))
 
     login_user(user, remember=remember)
-    return redirect(url_for('master.profile'))
+    return redirect(url_for('app.profile'))
 
 @app.route('/signup')
 def signup():
@@ -63,13 +63,13 @@ def signup_post():
 
     if user:
         flash('Email address already exists')
-        return redirect(url_for('auth.signup'))
+        return redirect(url_for('app.signup'))
 
     new_user = User(email=email, name=name, phonenumber=phonenumber, password=generate_password_hash(password, method='sha256'))
     db.session.add(new_user)
     db.session.commit()
 
-    return redirect(url_for('auth.login'))
+    return redirect(url_for('app.login'))
 
 @app.route('/update')
 def update():
@@ -83,7 +83,7 @@ def update_post():
 
     if not user or not check_password_hash(user.password, password):
         flash('Credentials incorrect.  Please try again')
-        return redirect(url_for('auth.login'))
+        return redirect(url_for('app.login'))
 
     user.name = request.form.get('name')
     user.phonenumber = request.form.get('phonenumber')
@@ -94,7 +94,7 @@ def update_post():
     user.password = request.form.get('password')
     db.session.commit()
 
-    return redirect(url_for('master.profile'))
+    return redirect(url_for('app.profile'))
 
 @app.route('/')
 def index():
