@@ -5,36 +5,16 @@
 {% extends "layout.html" %}
 
 <!-- CONTENT (in <head>), content for this page -->
-{% block meta %}
-    <title>CRUD page</title>
-    <script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>
-    <script src={{  url_for("crud.static", filename="javascript/reload_page.js", version='101') }}></script>
-{% endblock %}
+{#{% block meta %}#}
+{#    <title>CRUD page</title>#}
+{#    <script src={{  url_for("crud.static", filename="javascript/validation.js", version='101') }}></script>#}
+{#    <script src={{  url_for("crud.static", filename="javascript/reload_page.js", version='101') }}></script>#}
+{#{% endblock %}#}
 
 <!-- CONTENT (in <body>), content for this page -->
 {% block content %}
-    <div class="container py-4">
-        <header class="pb-3 mb-4 border-bottom border-primary text-dark">
-            <span class="fs-4">SQL CRUD Admin Page</span>
-        </header>
-    </div>
-    <div class="container py-4 text-light bg-success">
-
-        <div class="container bg-secondary py-4">
-            <div class="p-5 mb-4 bg-light text-dark rounded-3">
-                <h2>Table Viewer</h2>
-                <div class="row align-items-md-stretch">
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td><a href={{url_for('crud.crud')}}>Full Table </a></td>
-                            <td><a href="https://github.com/nighthawkcoders/nighthawk_csp/tree/master/crud">GitHub Source</a></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+    <h1>COLLABORATIVE RESOURCE PAGE</h1>
+    <h2>Duplicate resource names will not work. IF you think a second things is worth adding for a subject, add a number after the resource name</h2>
                 <div class="row align-items-md-stretch">
                     <div class="container-fluid py-5">
                         <table class="table">

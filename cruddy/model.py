@@ -22,8 +22,8 @@ class MyResources(db.Model):
 
     __tablename__ = 'myresources'
     # define the Users schema
-    resource = db.Column(db.String(255), nullable=False, primary_key=True)
-    link = db.Column(db.String(255), unique=False, nullable=False)
+    resource = db.Column(db.String(255), nullable=False, unique=False)
+    link = db.Column(db.String(255), primary_key=True, nullable=False)
     name = db.Column(db.String(255), unique=False, nullable=False)
     grade = db.Column(db.String(255), unique=False, nullable=False)
 

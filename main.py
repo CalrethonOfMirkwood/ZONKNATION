@@ -20,6 +20,11 @@ app.register_blueprint(app_myresources)
 def index():
     return render_template("index.html")
 
+@app.route('/calendar')
+def calendar():
+    return render_template("calendar.html")
+
+
 
 @app.errorhandler(404)
 def page_not_found(e):
