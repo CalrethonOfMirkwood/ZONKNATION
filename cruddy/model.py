@@ -60,6 +60,41 @@ class MyResources(db.Model):
             "name": self.name,
             "grade": self.grade,
         }
+class Comments(UserMixin, db.Model):
+
+    __tablename__ = 'comments'
+    # define the Users schema
+    userID = db.Column(db.Integer, primary_key=True)
+    comment = db.Column(db.String(255), nullable=False, unique=False)
+
+    # constructor of a User object, initializes of instance variables within object
+    def __init__(self, comment):
+        self.comment = comment
+
+    # Returns a string representation of the MyResources object, similar to java toString()
+    # returns string
+    def __repr__(self):
+        return "Comments(self.comment)"
+
+    # CRUD create/add a new record to the table
+    # returns self or None on error
+    def create(self):
+        try:
+            # creates a person object from Users(db.Model) class, passes initializers
+            db.session.add(self)  # add prepares to persist person object to Users table
+            db.session.commit()  # SqlAlchemy "unit of work pattern" requires a manual commit
+            return self
+        except IntegrityError:
+            db.session.remove()
+            return None
+
+    # CRUD read converts self to dictionary
+    # returns dictionary
+    def read(self):
+        return {
+            "userid": self.userID,
+            "comment": self.comment,
+        }
 
 class Users(UserMixin, db.Model):
     # define the Users schema
@@ -169,6 +204,14 @@ def model_tester():
             db.session.commit()
         except IntegrityError:
             db.session.remove()
+    c1 = Comments(comment="I Like Cheese")
+    comtable = [c1]
+    for row in comtable:
+        try:
+            db.session.add(row)
+            db.session.commit()
+        except IntegrityError:
+            db.session.remove()
 
 
 def model_printer():
@@ -183,6 +226,13 @@ def model_printer():
     print("Table: resources with SQL query")
     print("------------")
     result = db.session.execute('select * from MyResources')
+    print(result.keys())
+    for row in result:
+        print(row)
+    print("------------")
+    print("Table: comments with SQL query")
+    print("------------")
+    result = db.session.execute('select * from Comments')
     print(result.keys())
     for row in result:
         print(row)

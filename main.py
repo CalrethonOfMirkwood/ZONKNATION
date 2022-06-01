@@ -7,6 +7,7 @@ from cruddy.app_crud import app_crud
 from cruddy.app_crud_api import app_crud_api
 from y2022 import app_y2022
 from resourcey.app_resources import app_myresources
+from commenty.app_comments import app_comments
 
 app.register_blueprint(app_algorithm)
 app.register_blueprint(app_api)
@@ -14,6 +15,7 @@ app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
 app.register_blueprint(app_y2022)
 app.register_blueprint(app_myresources)
+app.register_blueprint(app_comments)
 
 
 @app.route('/')
