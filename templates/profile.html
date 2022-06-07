@@ -1,18 +1,27 @@
 {% extends "layouts/layout.html" %}
 
 {% block content %}
-<h1 class="title">
-    Welcome, {{ name }}!
-</h1>
-<p class="subtitle">{{ pronouns }}</p>
-<p class="subtitle">Your email is {{ email }} and your phone number is {{ phonenumber }}.</p>
-<div class="container">
-    <h3>Pronouns: {{ pronouns }}</h3>
-    <h3>Gender: {{ gender }}</h3>
-    <h3>Sexual+Romantic Attraction: {{ attraction }}</h3>
-    <h3>About:</h3>
-    <p>{{ bio }}</p>
+
+<section class="hero is-info">
+    <div class="hero-body">
+        <p class="title">
+            Welcome, {{ name }}!
+        </p>
+    </div>
+</section>
+
+<div class="container is-fluid">
+    <p class="subtitle">Your email is {{ email }} and your phone number is {{ phonenumber }}.</p>
+    <div class="container">
+        <h3><strong>Pronouns:</strong> {{ pronouns }}</h3>
+        <h3><strong>Gender:</strong> {{ gender }}</h3>
+        <h3><strong>Sexual+Romantic Attraction:</strong> {{ attraction }}</h3>
+        <h3><strong>About:</strong></h3>
+        <p>{{ bio }}</p>
+    </div>
 
 </div>
+<div class="container has-text-centered">
 <p><a href="{{ url_for('auth.update_post') }}">Update information</a></p>
+</div>
 {% endblock %}

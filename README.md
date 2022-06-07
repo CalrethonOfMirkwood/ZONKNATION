@@ -2,7 +2,7 @@
 <h2>Deployed on <a href="http://dnhsgsa.tk">dnhsgsa.tk</a></h2>
 <h2>Project Description</h2>
 <p>Our plan is to create a website for the GSA which can be used to tell stories of members, advocate for tolerance, and provide updates on the club.</p>
-
+<h2>Deployed at <a href="http://gsa.nighthawkcodingsociety.com"/>http://gsa.nighthawkcodingsociety.com</h2>
 <h2>People</h2>
 <table>
   <thead>

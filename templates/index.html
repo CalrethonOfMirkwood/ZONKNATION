@@ -1,7 +1,6 @@
 {% extends "layouts/layout.html" %}
 
 {% block content %}
-<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -70,34 +69,55 @@
     </style>
 </head>
 
-<h1>THE GSA / GENDER SEXUALITY ALLIANCE</h1>
 
-<div class="slideshow-container">
+<section class="hero is-info">
+    <div class="hero-body">
+        <p class="title">
+            THE DNHS GSA
+        </p>
+         <p class="subtitle">
+             GENDER SEXUALITY ALLIANCE
+          </p>
+        </div>
+</section>
 
-    <div class="mySlides fade">
-        <img src="https://files.worldwildlife.org/wwfcmsprod/images/Tiger_resting_Bandhavgarh_National_Park_India/hero_small/6aofsvaglm_Medium_WW226365.jpg" style="width: 70%"/>
+<section>
+<div class="container has-text-centered is-fluid">
+    <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="https://user-images.githubusercontent.com/57303754/171505196-185a1ef8-3167-4fd0-81ab-96f55528d5ce.jpg" style="width: 70%"/>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://user-images.githubusercontent.com/57303754/171505165-8d3d7017-6e76-4626-b701-32d3bad2c071.jpg" style="width:70%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://user-images.githubusercontent.com/57303754/171505187-99a2a656-7719-4985-9581-14e6b037250a.png" style="width:70%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://user-images.githubusercontent.com/57303754/171505149-6b0b7a8d-446e-4242-a90f-c5166104191a.jpg" style="width:70%">
+            </div>
+
+        </div>
     </div>
-
-    <div class="mySlides fade">
-        <img src="https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg" style="width:70%">
-    </div>
-
-    <div class="mySlides fade">
-        <img src="https://i.guim.co.uk/img/media/c0e411f5b4c387cd8b275f0794a3618210c5b216/0_339_5081_3048/master/5081.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=2ef9777aa8e5d74ff5048026d93470c3" style="width:70%">
-    </div>
-
 </div>
 <br>
 <div style="text-align:center">
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
+    <span class="dot"></span>
 </div>
 <br>
 <br>
-<h2>OUR MISSION STATEMENT:</h2>
+<div class="container has-text-centered is-fluid">
+    <h2>OUR MISSION STATEMENT:</h2>
 
-<h3>GSAsite is an online forum designed to connect members of the LGBTQ community with one another to form friendships and support groups, while providing allies an opportunity to educate themselves on the concerns and challenges facing gender, sexual, and romantic minorities in a safe, online space.</h3>
+    <h3>GSAsite is an online forum designed to connect members of the LGBTQ community with one another to form friendships and support groups, while providing allies an opportunity to educate themselves on the concerns and challenges facing gender, sexual, and romantic minorities in a safe, online space.</h3>
+</div>
 <script>
     let slideIndex = 0;
     showSlides();
@@ -119,5 +139,4 @@
         setTimeout(showSlides, 4000); // Change image every 2 seconds
     }
 </script>
-</html>
 {% endblock %}

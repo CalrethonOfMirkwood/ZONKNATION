@@ -9,38 +9,49 @@
 </head>
 
 <body>
-<section class="hero is-primary is-fullheight">
-    <div class="hero-head">
-        <nav class="navbar">
-            <div class="container">
-                <div id="navbarMenuHeroA" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a href="{{ url_for('index') }}" class="navbar-item">Home</a>
-                        <a href="{{ url_for('resources') }}" class="navbar-item">Resources</a>
-                        <a href="{{ url_for('calender') }}" class="navbar-item">Calender</a>
-                        <a href="{{ url_for('about') }}" class="navbar-item">About</a>
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-menu">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://gsa.nighthawkcodingsociety.com">
+                    <img src="/static/gsalogo.png" alt="GSA">
+                </a>
+            </div>
+            <div class="navbar-end">
+                        <a href="{{ url_for('master.index') }}" class="navbar-item">Home</a>
+                        <a href="{{ url_for('myresources.myresources') }}" class="navbar-item">Resources</a>
+                        <a href="{{ url_for('comments.comments') }}" class="navbar-item">Anonymous Messaging Board</a>
+                        <a href="{{ url_for('master.calendar') }}" class="navbar-item">Calendar</a>
                         {% if current_user.is_authenticated %}
-                        <a href="{{ url_for('profile') }}" class="navbar-item">{{ current_user.name }}'s Profile</a>
+                            <a href="{{ url_for('master.profile') }}" class="navbar-item">{{ current_user.name }}'s Profile</a>
                         {% endif %}
                         {% if not current_user.is_authenticated %}
-                        <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
-                        <a href="{{ url_for('signup') }}" class="navbar-item">Sign Up</a>
+                            <a href="{{ url_for('auth.login') }}" class="navbar-item">Login</a>
+                            <a href="{{ url_for('auth.signup') }}" class="navbar-item">Sign Up</a>
                         {% endif %}
                         {% if current_user.is_authenticated %}
-                        <a href="{{ url_for('logout') }}" class="navbar-item">Logout</a>
+                            <a href="{{ url_for('auth.logout') }}" class="navbar-item">Logout</a>
                         {% endif %}
-                    </div>
-                </div>
             </div>
-        </nav>
-    </div>
-
-    <div class="hero-body">
-        <div class="container has-text-centered">
-            {% block content %}
-            {% endblock %}
         </div>
     </div>
-</section>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            This site is managed by the GSA of Del Norte High School.
+        </p>
+        <p>
+            This website uses the CSS framework <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+    </div>
+</footer>
+
+</div>
+</div>
 </body>
 </html>
