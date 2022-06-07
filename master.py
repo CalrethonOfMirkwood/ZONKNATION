@@ -7,21 +7,13 @@ master = Blueprint('master', __name__)
 def index():
     return render_template('index.html')
 
-@master.route('/resources')
-def resources():
-    return render_template('resources.html')
-
 @master.route('/signup')
 def signup():
     return render_template('signup.html')
 
-@master.route('/calender')
-def calender():
-    return render_template('calender.html')
-
-@master.route('/about')
-def about():
-    return render_template('about.html')
+@master.route('/calendar')
+def calendar():
+    return render_template('calendar.html')
 
 @master.route('/profile')
 @login_required
